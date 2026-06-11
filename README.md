@@ -26,6 +26,8 @@ Each ego history timestep is individually masked (features zeroed) and the predi
 LAformer-Explainability/
 ├── README.md
 ├── environment.yml               # Conda environment
+├── app.py                        # Interactive Gradio demo (localhost:7860)
+├── slides.md                     # Marp presentation slides
 ├── .gitignore
 │
 ├── checkpoints/
@@ -108,6 +110,28 @@ python -m explainability.preview_all
 ## Usage
 
 All commands should be run from the project root with the conda environment activated.
+
+### Interactive Gradio App
+
+The interactive demo lets you explore explainability results in real time through a browser UI.
+
+```bash
+python app.py
+```
+
+Open http://localhost:7860 in your browser. The app loads the model and data on startup (~5 seconds).
+
+**Workflow:**
+
+1. **Select a split** (`mini_val` or `mini_train`) and a **sample** from the dropdown (shows scene name, agent count, and FDE).
+2. The **baseline prediction** appears on the left with labeled agents (`#0 V`, `#1 P`, ...) and lane indices (`L0`, `L1`, ...).
+3. Use the **ablation controls** on the right to run "what-if" experiments:
+   - **Group toggles** -- check "Remove Pedestrians", "Remove Vehicles", or "Remove Lanes" to ablate entire categories.
+   - **Individual agents** -- enter agent indices (e.g. `0,3,5`) to remove specific neighbors.
+   - **Selective lanes** -- enter lane indices (e.g. `0-5,10,12`) to remove specific lane polylines.
+4. Click **Run Ablation** to see the ablated prediction side-by-side with the baseline, plus ADE/FDE shift metrics.
+5. Use the **Zoom slider** (-2 = close-up, +2 = full scene) to adjust the view without re-running inference.
+6. Toggle **Show lane labels** on/off for clarity.
 
 ### Generate Preview Images
 

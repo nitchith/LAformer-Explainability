@@ -240,6 +240,25 @@ def remove_lanes(
     return m
 
 
+def remove_specific_lanes(
+    mapping: dict,
+    lane_indices: List[int],
+) -> dict:
+    """
+    Return a deep copy of *mapping* with only the specified lane polylines
+    zeroed out.  lane_indices are 0-based relative to the first lane polyline
+    (i.e. lane 0 == polyline_spans[map_start_polyline_idx]).
+    """
+    m = copy.deepcopy(mapping)
+    map_start = m["map_start_polyline_idx"]
+    lane_spans = m["polyline_spans"][map_start:]
+    for li in lane_indices:
+        if 0 <= li < len(lane_spans):
+            sp = lane_spans[li]
+            m["matrix"][sp.start:sp.stop, :] = 0.0
+    return m
+
+
 def remove_lanes_and_neighbors(
     mapping: dict,
 ) -> dict:
