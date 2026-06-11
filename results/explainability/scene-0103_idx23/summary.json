@@ -1,0 +1,90 @@
+{
+  "scene": "scene-0103",
+  "sample_idx": 23,
+  "n_agents": 51,
+  "n_vehicles": 29,
+  "n_pedestrians": 22,
+  "n_other": 0,
+  "n_mislabeled": 7,
+  "baseline_ade": 1.05432978379641,
+  "baseline_fde": 2.6166762619976796,
+  "group_ablation": {
+    "no_peds": {
+      "n_removed": 22,
+      "min_fde": 0.46414010516115345,
+      "ade": 1.1645936912286683,
+      "fde": 2.751857755970513,
+      "ade_shift": 0.12589940428733826,
+      "fde_shift": 0.23740388453006744
+    },
+    "no_vehs": {
+      "n_removed": 29,
+      "min_fde": 0.9013896302935696,
+      "ade": 0.41931015305307356,
+      "fde": 0.9013896302935696,
+      "ade_shift": 0.6725128293037415,
+      "fde_shift": 1.9356932640075684
+    },
+    "no_agents": {
+      "n_removed": 51,
+      "min_fde": 0.5464726565845335,
+      "ade": 0.3649825814824445,
+      "fde": 0.5464726565845336,
+      "ade_shift": 0.7042503356933594,
+      "fde_shift": 2.09375262260437
+    },
+    "no_lanes": {
+      "n_removed": 117,
+      "min_fde": 2.0783137046674267,
+      "ade": 1.1677865328326489,
+      "fde": 4.865131362585531,
+      "ade_shift": 2.1759400367736816,
+      "fde_shift": 7.455329895019531
+    },
+    "ego_only": {
+      "n_removed": 168,
+      "min_fde": 1.2870941026727076,
+      "ade": 1.019669893493436,
+      "fde": 1.2870941026727076,
+      "ade_shift": 0.4331083297729492,
+      "fde_shift": 1.7472058534622192
+    }
+  },
+  "top5_individual": [
+    {
+      "type": "Vehicle",
+      "cat": "vehicle.car",
+      "dist": 18.69842693918393,
+      "ade_shift": 0.7217175364494324,
+      "fde_shift": 2.0857930183410645
+    },
+    {
+      "type": "Pedestrian",
+      "cat": "human.pedestrian.adult",
+      "dist": 3.5565192253100943,
+      "ade_shift": 0.07972603291273117,
+      "fde_shift": 0.17523083090782166
+    },
+    {
+      "type": "Vehicle",
+      "cat": "vehicle.car",
+      "dist": 32.198359476842725,
+      "ade_shift": 0.04701592028141022,
+      "fde_shift": 0.12003182619810104
+    },
+    {
+      "type": "Pedestrian",
+      "cat": "human.pedestrian.adult",
+      "dist": 3.5848806116800436,
+      "ade_shift": 0.019299164414405823,
+      "fde_shift": 0.11439745873212814
+    },
+    {
+      "type": "Pedestrian",
+      "cat": "human.pedestrian.child",
+      "dist": 4.07666248296316,
+      "ade_shift": 0.0182457584887743,
+      "fde_shift": 0.04399535059928894
+    }
+  ]
+}

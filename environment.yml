@@ -1,0 +1,15 @@
+name: laformer-explain
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.9
+  - pytorch>=1.13
+  - numpy>=1.22
+  - matplotlib>=3.5
+  - pip
+  - pip:
+    - nuscenes-devkit>=1.1.9
+    - shapely>=1.8
+    - tqdm
+    - imageio

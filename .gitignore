@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Environment
+env/
+venv/
+.venv/
+
+# nuScenes dataset (must be downloaded separately)
+nuscenes_mini/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# LAformer temp files (created at runtime)
+checkpoints/nuScene_k5/eval.args
+checkpoints/nuScene_k5/model_save/
+checkpoints/nuScene_k5/temp_file/
+
+# Results (generated output -- optionally track)
+# results/
